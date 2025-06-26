@@ -63,5 +63,5 @@ Each record contains:
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/yourusername/customer-insurance-prediction
+git clone https://github.com/ChinmaySN/customer-insurance-prediction
 cd customer-insurance-prediction
