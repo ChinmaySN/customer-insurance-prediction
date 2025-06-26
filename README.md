@@ -3,65 +3,89 @@
 </p>
 
 
-# Customer Insurance Prediction
+# 🛡️ Customer Insurance Purchase Prediction
 
-Predict whether a customer will purchase insurance based on their age and estimated salary using various machine learning classification models.
-
----
-
-## 📌 Project Overview
-
-As an analyst at a bank-affiliated insurance company, your goal is to develop a predictive AI model using customer demographics (excluding personal identifiers) to identify potential insurance buyers. This helps improve targeting, reduce marketing costs, and boost conversions.
+Predict whether a customer will purchase insurance based on their **Age** and **Estimated Salary** using multiple machine learning models.
 
 ---
 
-## 🔍 Problem Statement
+## 📌 Overview
 
-Develop and compare multiple machine learning classification algorithms to:
-
-- Predict insurance purchase decisions.
-- Evaluate model performance across accuracy, precision, recall, F1-score, and ROC-AUC.
-- Determine the most effective model that balances accuracy and generalization.
+As an analyst at a bank insurance company, your goal is to use customer data (age & salary) to predict insurance purchases. This project compares various classification algorithms to identify the most accurate and generalizable model.
 
 ---
 
-## 🧠 ML Algorithms Used
+## 💼 Business Objective
+
+Develop an AI model to:
+- Accurately predict if a customer will purchase insurance.
+- Compare performance of various ML algorithms.
+- Deploy simple prediction functions for end-users.
+
+---
+
+## 🧠 Models Used
 
 - Logistic Regression
 - K-Nearest Neighbors (KNN)
 - Support Vector Machine (SVM)
-- Decision Tree Classifier
-- Random Forest Classifier
+- Decision Tree
+- Random Forest
 
 ---
 
 ## 📊 Dataset
 
-Each record contains:
+The dataset contains:
 
-- `Age`: Customer's age
-- `EstimatedSalary`: Annual income
-- `Purchased`: 1 if the customer purchased insurance, else 0
+| Column          | Description                    |
+|-----------------|--------------------------------|
+| Age             | Customer age in years          |
+| EstimatedSalary | Estimated salary (in **INR**)  |
+| Purchased       | 1 = Purchased, 0 = Not purchased |
 
-*1000 rows of synthetic but realistic data were used for training and testing.*
-
----
-
-## 📈 Results Snapshot
-
-| Model                | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-|---------------------|----------|-----------|--------|----------|---------|
-| Random Forest        | 0.87     | 0.85      | 1.00   | 0.92     | 1.00    |
-| SVM                  | 0.87     | 0.85      | 1.00   | 0.92     | 1.00    |
-| Logistic Regression  | 0.87     | 0.85      | 1.00   | 0.92     | 1.00    |
-| KNN                  | 0.87     | 0.85      | 1.00   | 0.92     | 0.88    |
-| Decision Tree        | 0.87     | 0.85      | 1.00   | 0.92     | 0.75    |
+📁 File: `insurance_data.csv`
 
 ---
 
-## 📦 How to Use
+## 🚀 How to Use
 
-1. Clone the repo:
-```bash
-git clone https://github.com/ChinmaySN/customer-insurance-prediction
-cd customer-insurance-prediction
+### Option 1: Try Predictions Instantly
+
+> ✅ No training required — just use the pre-trained models.
+
+1. Open the notebook:  
+   👉 [predict.ipynb](predict.ipynb)
+
+2. Run all cells.
+
+3. Predict like this:
+random_forest_predict(30, 87000)
+logistic_predict(45, 120000)
+knn_predict(25, 60000)
+
+### 🟡 Option 2: Train the Model Yourself
+
+1. Open and run `insurance.ipynb`.
+
+2. It will:
+   - Preprocess the data  
+   - Train all machine learning models  
+   - Save the scaler and model files as `.pkl`  
+   - Plot decision boundaries for each model
+
+## 🧠 Hypotheses Tested
+
+- 💡 Younger individuals with higher salaries are more likely to buy insurance.  
+- 💡 Salary has a stronger influence than age.  
+- 💡 Elderly customers with low income are less likely to purchase.
+
+✅ All validated with the trained models.
+
+---
+
+## 📍 Real-World Applications
+
+- Bank/Insurance CRM systems  
+- Health/Travel/Life Insurance Lead Scoring  
+- Personalized marketing in financial sectors
